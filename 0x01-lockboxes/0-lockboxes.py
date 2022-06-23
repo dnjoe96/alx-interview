@@ -1,24 +1,26 @@
 #!/usr/bin/python3
+""" Module containing function to solve the lockboxes problem """
+
 
 def canUnlockAll(boxes):
-  all = []
-  count = 0
-  for one in boxes:
-    if len(one) == 0:
-      all = all + [0]
-    all = all + one
-    count += 1
+    """
 
-  print(all)
-  if count - 1 not in all:
-    return False
-  return True
+    The lock checker function
 
-boxes = [[1], [2], [3], [4], []]
-print(canUnlockAll(boxes))
+    @arg: list - list of list representing list of boxes
+    return: Bool -  True or False
+    """
 
-boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
-print(canUnlockAll(boxes))
+    all = []
+    count = 0
 
-boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
-print(canUnlockAll(boxes))
+    for box in boxes:
+        if len(box) == 0 and box is not boxes[-1]:
+            return False
+
+        all = all + box
+        count += 1
+
+    if count - 1 not in all:
+        return False
+    return True

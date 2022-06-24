@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
     return: Bool -  True or False
     """
 
-    all = []
+    all = [0]
     count = 0
 
     for box in boxes:
@@ -21,6 +21,6 @@ def canUnlockAll(boxes):
         all = all + box
         count += 1
 
-    if not set(range(1, count)).issubset(all):
-        return False
-    return True
+    if len(set(all)) == len(boxes):
+        return True
+    return False

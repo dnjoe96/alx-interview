@@ -21,6 +21,6 @@ def canUnlockAll(boxes):
         all = all + box
         count += 1
 
-    if count - 1 not in all:
+    if not set(range(1, count)).issubset(all):
         return False
     return True

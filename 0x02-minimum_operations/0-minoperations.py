@@ -19,6 +19,6 @@ def minOperations(n):
             n = n / i
 
             if n == 1:
-                break
+                return res
             # print(int(n))
     return res

@@ -24,6 +24,7 @@ class Log:
 
 
 def handler(signal_received, frame):
+    """ SIGINT handler function """
     # signal(SIGINT, handler)
     Log.process()
 

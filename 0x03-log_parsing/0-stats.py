@@ -33,14 +33,13 @@ if __name__ == '__main__':
     signal(SIGINT, handler)
 
     for line in sys.stdin:
-        Log.count += 1
 
         str_code = line.split(" ")[-2]
         # print(str_code)
         if str_code.isdigit():
             code = int(line.split(" ")[-2])
         else:
-            code = 0
+            continue
 
         if code not in Log.status_code.keys():
             Log.status_code[code] = 1
@@ -54,5 +53,6 @@ if __name__ == '__main__':
         except Exception as e:
             print(f"Error - {e}")
 
+        Log.count += 1
         if Log.count == 10:
             Log.process()

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Script to read logs"""
-from signal import signal, SIGINT
+from signal import signal
+from signal import SIGINT
 import sys
 
 

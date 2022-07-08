@@ -16,8 +16,9 @@ class Log:
     code_choice = [200, 301, 400, 401, 403, 404, 405, 500]
 
     def process() -> None:
-        """
-        Processes the log data
+        """Processes the log data
+        Return:
+            None
         """
         # print(status_code)
         print(f"File size: {Log.sum}")
@@ -37,7 +38,9 @@ def handler(signal_received, frame) -> None:
     return None
 
 
-if __name__ == '__main__':
+def main():
+    """ The main function
+    """
     signal(SIGINT, handler)
 
     for line in sys.stdin:
@@ -64,3 +67,7 @@ if __name__ == '__main__':
         Log.count += 1
         if Log.count == 10:
             Log.process()
+
+
+if __name__ == '__main__':
+    main()

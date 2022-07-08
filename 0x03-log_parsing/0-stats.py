@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" Script to read logs"""
+"""
+Script to read logs
+script will read input fron stdin and process the informartion
+gathered.
+"""
 from signal import signal
 from signal import SIGINT
 import sys

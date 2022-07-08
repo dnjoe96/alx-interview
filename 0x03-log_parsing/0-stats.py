@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 """
-Script to read logs
 script will read input fron stdin and process the informartion
-gathered.
 """
-from signal import signal
-from signal import SIGINT
+from signal import signal, SIGINT
 import sys
 
 
 class Log:
-    """ 
+    """
     Log class
     """
     count = 0
@@ -19,7 +16,7 @@ class Log:
     code_choice = [200, 301, 400, 401, 403, 404, 405, 500]
 
     def process() -> None:
-        """ 
+        """
         Processes the log data
         """
         # print(status_code)

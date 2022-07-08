@@ -21,10 +21,13 @@ class Log:
             None
         """
         # print(status_code)
-        print(f"File size: {Log.sum}")
+        print("File size: {}".format(Log.sum))
         for code in Log.code_choice:
             if code in Log.status_code.keys():
-                print(f'{code}: {Log.status_code.get(code)}')
+                print('{}: {}'.format(
+                    code,
+                    Log.status_code.get(code)
+                    ))
         Log.count = 0
         Log.sum = 0
         Log.status_code = {}
@@ -62,7 +65,7 @@ def main():
             size = int(line.split(" ")[-1])
             Log.sum += size
         except Exception as e:
-            print(f"Error - {e}")
+            print("Error - {}".format(e))
 
         Log.count += 1
         if Log.count == 10:

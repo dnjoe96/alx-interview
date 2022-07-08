@@ -8,7 +8,7 @@ import sys
 
 class Log:
     """
-    Log class
+    Log class for handling log processessing
     """
     count = 0
     sum = 0
@@ -32,14 +32,14 @@ class Log:
 
 
 def handler(signal_received, frame) -> None:
-    """ SIGINT handler function """
+    """ SIGINT handler function to handle keyboard interrupt"""
     # signal(SIGINT, handler)
     Log.process()
     return None
 
 
 def main():
-    """ The main function
+    """ The main function of the program
     """
     signal(SIGINT, handler)
 

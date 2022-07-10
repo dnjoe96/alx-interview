@@ -15,6 +15,7 @@ class Log:
     status_code = {}
     code_choice = [200, 301, 400, 401, 403, 404, 405, 500]
 
+    @staticmethod
     def process() -> None:
         """Processes the log data
         Return:

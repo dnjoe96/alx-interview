@@ -57,6 +57,6 @@ def validUTF8(data_set):
 
     for j in range(num_of_byte - 1):
         # print(to_bin(data_set[j]), to_bin(192), to_bin(128))
-        if data_set[j] & 192 != 128 or data_set[j] > 255:
+        if data_set[j] & 192 != 128 and data_set[j] > 255:
             return False
     return True

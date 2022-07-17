@@ -27,6 +27,8 @@ def validUTF8(data_set):
     '11111111' == 255
     """
     # print(data_set, '\n', [to_bin(num) for num in data_set])
+    if len(data_set) == 0:
+        return False
     val = data_set[0]
     if val > 255:
         # print('first if\n{} > {}'.format(to_bin(val), to_bin(255)))

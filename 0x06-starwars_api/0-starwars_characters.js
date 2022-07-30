@@ -5,22 +5,21 @@ const id = process.argv[2];
 
 const baseUrl = 'https://swapi-api.hbtn.io/api/';
 
-request(`${baseUrl}films/`, { json: true }, (err, res, body) => {
+request.get(`${baseUrl}films/${id}`, { json: true }, (err, res, body) => {
   if (err) { return console.log(err); }
-  const result = body.results;
+  const result = body.characters;
+  // console.log(result);
 
-  for (const one of result) {
-    if (one.episode_id === Number(id)) {
-      listActors(one.characters);
-    }
-  }
+  listActors(result);
 });
 
-function listActors (listOfLinks) {
-  for (const characterUrl of listOfLinks) {
-    request(`${characterUrl}`, { json: true }, (err, res, body) => {
-      if (err) { return console.log(err); }
-      console.log(body.name);
-    });
-  }
+function listActors (result, i = 0) {
+  if (i === result.length) return;
+
+  request(result[i], { json: true }, (err, res, body) => {
+    if (err) { return console.log(err); }
+
+    console.log(body.name);
+    listActors(result, i + 1);
+  });
 }

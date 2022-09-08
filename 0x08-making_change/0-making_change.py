@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/python3
 """Given a pile of coins of different values,
 determine the fewest number of coins needed
@@ -10,14 +8,13 @@ import sys
 
 def makeChange(coins, total):
     """Make Change
-    Params
-    ------
-    coins
-      array - of all coins
-    total
-      int
+
+    Args:
+        coins
+                array - of all coins
+        total
+                int
     Return
-    -----
       min_amount_of_coins
     """
 
